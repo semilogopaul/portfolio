@@ -38,6 +38,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <head>
         <link rel="icon" href="/logo.png" />
+        <meta name="msvalidate.01" content="49CB0F9D0D5749ABFC3CD0F3E547D760" />
       </head>
       <body
         className={`${inter.variable} ${poppins.variable} ${spaceGrotesk.variable}`}
