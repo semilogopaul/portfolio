@@ -22,7 +22,7 @@ const projects = [
       "DJANGO",
       "DJANGO-REST FRAMEWORK",
     ],
-    image: "/Rate-a-School.png",
+    image: "/Rate-a-school.png",
   },
   {
     title: "Vendor Search App",
@@ -31,7 +31,7 @@ const projects = [
       "A voluntarily built web app for Zeta-Web Nigeria Limited built during my internship period, it extracts vendor data from excel files and presents them on the front-end in a beautiful way for easier data accessibility and efficiency. Earned me a recommendation from the head of technology.",
     link: "https://vendor-search.vercel.app/",
     stack: ["HTML", "CSS", "JAVASCRIPT"],
-    image: "/vendor-search.png",
+    image: "/vendor-search.PNG",
   },
   {
     title: "NeuraLearn",
@@ -58,7 +58,7 @@ const projects = [
       "JAVASCRIPT",
       "DJOSER",
     ],
-    image: "/littlelemon.png",
+    image: "/littlelemon.PNG",
   },
   {
     title: "DIY Analytics",
@@ -85,7 +85,7 @@ const projects = [
       "Fixed broken client datafeed script and utilized JPMorgan's Perspective software to generate a live graph for traders.",
     link: "https://github.com/semilogopaul/forage-jpmc-swe-task-3",
     stack: ["PYTHON", "TYPESCRIPT", "REACT", "HTML", "CSS", "JAVASCRIPT"],
-    image: "/jpmc-graph.png",
+    image: "/jpmc-graph.PNG",
   },
   {
     title: "Nike Landing Page",
@@ -94,7 +94,7 @@ const projects = [
       "A beautiful Nike shoes landing page built while learning React and Tailwind.",
     link: "https://github.com/semilogopaul/nike-landing-page",
     stack: ["TYPESCRIPT", "TAILWIND", "REACT", "HTML", "CSS", "JAVASCRIPT"],
-    image: "/nike-page.png",
+    image: "/nike-page.PNG",
   },
 ];
 
