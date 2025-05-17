@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useScrollSpy } from "@/hooks/use-scroll-spy";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,6 +17,7 @@ const Header = () => {
       rootMargin: "-30% 0px -70% 0px",
     }
   );
+  const isSmallScreen = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,14 +61,21 @@ const Header = () => {
           <div className="flex-shrink-0">
             <Link href="#home" className="group">
               <h2 className="text-2xl font-bold font-poppins">
-                <span className="text-blue-500 group-hover:text-glow transition-all duration-300">
-                  A
+                <span className="text-white group-hover:text-glow transition-all duration-300">
+                  {isSmallScreen ? (
+                    <>
+                      <span className="text-blue-500">O</span>
+                      <span className="text-white">LUWASEMILOGO</span>
+                    </>
+                  ) : (
+                    <span className="text-blue-500">A</span>
+                  )}
                 </span>
-                DEOGUN{" "}
+                {isSmallScreen ? "" : "DEOGUN"}{" "}
                 <span className="text-blue-500 group-hover:text-glow transition-all duration-300">
-                  O
+                  {isSmallScreen ? "" : "O"}
                 </span>
-                LUWASEMILOGO
+                {isSmallScreen ? "" : "LUWASEMILOGO"}
               </h2>
             </Link>
           </div>
@@ -116,11 +125,24 @@ const Header = () => {
       {/* Mobile Navigation */}
       <div
         className={cn(
-          "md:hidden fixed inset-0 bg-background/95 backdrop-blur-md z-40 transition-transform duration-300 ease-in-out",
+          "md:hidden fixed inset-0 bg-background/95 backdrop-blur-md z-40 transition-transform duration-300 ease-in-out overflow-hidden",
           isOpen ? "translate-x-0" : "translate-x-full"
         )}
+        style={{ position: "fixed", height: "100vh" }}
       >
         <div className="flex flex-col items-center justify-center h-full space-y-8">
+          {/* Close button */}
+          <div className="absolute top-4 right-4">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsOpen(false)}
+              aria-label="Close menu"
+            >
+              <X className="h-6 w-6" />
+            </Button>
+          </div>
+
           {navLinks.map((link) => (
             <Link
               key={link.name}
@@ -129,7 +151,13 @@ const Header = () => {
                 "text-2xl font-medium text-foreground hover:text-primary transition-colors duration-200",
                 activeSection === link.href.substring(1) && "text-primary"
               )}
-              onClick={() => setIsOpen(false)}
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .querySelector(link.href)
+                  ?.scrollIntoView({ behavior: "smooth" });
+                setIsOpen(false);
+              }}
             >
               {link.name}
             </Link>
