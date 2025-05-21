@@ -31,7 +31,7 @@ const skillCategories = [
   {
     title: "Backend",
     icon: <Server className="h-6 w-6 text-blue-400" />,
-    skills: ["Node.js", "Django", "Nest.js", "DRF", "FastAPI"],
+    skills: ["Express.js", "Django", "Nest.js", "DRF", "FastAPI"],
   },
   {
     title: "Database",

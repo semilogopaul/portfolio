@@ -39,7 +39,7 @@ const projects = [
     details:
       "Developed a web app that transforms uploaded text, PDFs, and images into interactive learning materials, including auto-generated questions and flashcards. The platform offers customizable difficulty levels, study modes, and real-time performance tracking with accuracy, time analytics and other metrics.",
     link: "https://neura-learn-frontend-fmin.vercel.app/",
-    stack: ["NODE.JS", "REACT.JS", "DJANGO", "PYTHON", "JAVASCRIPT"],
+    stack: ["EXPRESS.JS", "REACT.JS", "DJANGO", "PYTHON", "JAVASCRIPT"],
     image: "/neuralearn.jpeg",
   },
   {
