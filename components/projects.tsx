@@ -92,7 +92,7 @@ const projects = [
     description: "Beautiful Nike Shoes Landing Page",
     details:
       "A beautiful Nike shoes landing page built while learning React and Tailwind.",
-    link: "https://github.com/semilogopaul/nike-landing-page",
+    link: "https://semilogo-nike.netlify.app/",
     stack: ["TYPESCRIPT", "TAILWIND", "REACT", "HTML", "CSS", "JAVASCRIPT"],
     image: "/nike-page.PNG",
   },
