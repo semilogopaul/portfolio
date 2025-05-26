@@ -79,6 +79,15 @@ const projects = [
     image: "/iPhone.png",
   },
   {
+    title: "Poolup",
+    description: "Smart Carpooling Application",
+    details:
+      "Poolup is a progressive web application designed to simplify and secure carpooling. It allows users to book and share rides, manage vehicle registrations, and make in-app payments, all within a streamlined, mobile-friendly experience. Safety is a core feature, with an emergency button that instantly alerts trusted contacts, system administrators, and local authorities. Poolup also includes an admin portal called PVAP for managing users, vehicles, and ride data, making it a complete solution for modern, community-driven transportation.",
+    link: "https://poolupuni.com/",
+    stack: ["NODE.JS", "EXPRESS.JS", "REACT.JS", "MONGODB", "TAILWIND"],
+    image: "/poolup.png",
+  },
+  {
     title: "Trader Dashboard",
     description: "Live Graph for Traders",
     details:
