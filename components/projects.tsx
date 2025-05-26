@@ -30,8 +30,8 @@ const projects = [
     details:
       "A voluntarily built web app for Zeta-Web Nigeria Limited built during my internship period, it extracts vendor data from excel files and presents them on the front-end in a beautiful way for easier data accessibility and efficiency. Earned me a recommendation from the head of technology.",
     link: "https://vendor-search.vercel.app/",
-    stack: ["HTML", "CSS", "JAVASCRIPT"],
-    image: "/vendor-search.png",
+    stack: ["TYPESCRIPT", "NEXT.JS", "TAILWIND"],
+    image: "/vendor.png",
   },
   {
     title: "NeuraLearn",
