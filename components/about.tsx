@@ -73,17 +73,23 @@ const About = () => {
 
             <p className="text-foreground/80 mb-6 leading-relaxed text-lg">
               Graduated First Class (top 1%) in Software Engineering. Innovative
-              Full-Stack Software Engineer with a passion for tackling
-              challenges and building impactful solutions. Recently led a
-              successful pitch that attracted investor interest; mentored by
-              billionaire Tony Elumelu.
+              Full-Stack Software Engineer with over 6 years of professional
+              experience designing, building, and scaling impactful solutions.
+              Over the years, I've led engineering teams, improved development
+              processes, and delivered high-quality products across diverse
+              environments.
+            </p>
+
+            <p className="text-foreground/80 mb-6 leading-relaxed text-lg">
+              Recently led a successful pitch that attracted investor interest
+              and have been mentored by billionaire Tony Elumelu.
             </p>
 
             <p className="text-foreground/80 mb-8 leading-relaxed text-lg">
               I thrive in open-minded, innovation-driven teams that believe "if
-              you can think it, you can build it." I believe in ownership,
-              continuous learning, and making things better, no matter how
-              small. Let's build something great.
+              you can think it, you can build it." I value ownership, continuous
+              learning, and making things better no matter how small. Let's
+              build something great.
             </p>
 
             <Button
