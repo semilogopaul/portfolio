@@ -161,7 +161,7 @@ const ProjectCard = ({
               >
                 {tech}
               </Badge>
-            )
+            ),
           )}
           {!showFullStack && project.stack.length > 3 && (
             <Badge
