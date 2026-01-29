@@ -13,13 +13,14 @@ const About = () => {
 
   return (
     <section id="about" className="py-24 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-blue-950/10 to-background opacity-50"></div>
+      {/* Subtle gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent"></div>
 
       <div className="container-section relative z-10" ref={ref}>
         <div className="flex justify-center mb-8">
           <div className="relative">
-            <div className="absolute inset-0 rounded-full bg-blue-500/20 animate-pulse-slow"></div>
-            <div className="relative bg-secondary p-3 rounded-full">
+            <div className="absolute inset-0 rounded-sm bg-primary/20 animate-neon-pulse"></div>
+            <div className="relative bg-secondary p-3 rounded-sm border border-primary/30">
               <User className="h-6 w-6 text-primary" />
             </div>
           </div>
@@ -33,19 +34,23 @@ const About = () => {
           <div
             className={cn(
               "transition-all duration-1000 transform",
-              inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
+              inView
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 -translate-x-12",
             )}
           >
             <div className="relative w-full aspect-square max-w-md mx-auto">
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -left-4 w-24 h-24 border border-blue-500/30 rounded-md z-0"></div>
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 border border-blue-500/30 rounded-md z-0"></div>
+              {/* Retro decorative corners */}
+              <div className="absolute -top-2 -left-2 w-8 h-8 border-l-2 border-t-2 border-primary/50"></div>
+              <div className="absolute -top-2 -right-2 w-8 h-8 border-r-2 border-t-2 border-primary/50"></div>
+              <div className="absolute -bottom-2 -left-2 w-8 h-8 border-l-2 border-b-2 border-primary/50"></div>
+              <div className="absolute -bottom-2 -right-2 w-8 h-8 border-r-2 border-b-2 border-primary/50"></div>
 
-              {/* Image container with glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-indigo-600/20 rounded-xl transform rotate-6 group-hover:rotate-3 transition-transform duration-500"></div>
-              <div className="absolute inset-0 glass-effect rounded-xl overflow-hidden shadow-[0_0_15px_rgba(37,99,235,0.3)]">
+              {/* Image container with neon glow effect */}
+              <div className="absolute inset-0 glass-effect rounded-sm overflow-hidden border border-primary/20 hover:border-primary/40 transition-all duration-300 group">
+                <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/10 transition-colors duration-300"></div>
                 <Image
-                  src="/semilogo.png"
+                  src="/semilogo.jpg"
                   alt="Adeogun Semilogo"
                   width={400}
                   height={400}
@@ -59,10 +64,10 @@ const About = () => {
           <div
             className={cn(
               "transition-all duration-1000 delay-300 transform",
-              inView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
+              inView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12",
             )}
           >
-            <h3 className="text-2xl md:text-3xl font-bold mb-6 text-blue-400">
+            <h3 className="text-2xl md:text-3xl font-bold mb-6 text-primary text-glow">
               Software Engineer
             </h3>
 
@@ -83,7 +88,7 @@ const About = () => {
 
             <Button
               asChild
-              className="rounded-full bg-blue-600 hover:bg-blue-700 btn-glow"
+              className="rounded-sm bg-primary hover:bg-primary/90 text-black font-semibold btn-glow transition-all duration-300 hover:scale-105"
             >
               <a
                 href="/OLUWASEMILOGO_ADEOGUN_RESUME.pdf"

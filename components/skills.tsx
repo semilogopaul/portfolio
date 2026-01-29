@@ -12,11 +12,10 @@ import {
   Lightbulb,
 } from "lucide-react";
 
-// Replace the entire skillCategories array with this version without levels
 const skillCategories = [
   {
     title: "Frontend",
-    icon: <Globe className="h-6 w-6 text-blue-400" />,
+    icon: <Globe className="h-6 w-6 text-primary" />,
     skills: [
       "React",
       "Redux",
@@ -30,31 +29,31 @@ const skillCategories = [
   },
   {
     title: "Backend",
-    icon: <Server className="h-6 w-6 text-blue-400" />,
+    icon: <Server className="h-6 w-6 text-primary" />,
     skills: ["Express.js", "Django", "Nest.js", "DRF", "FastAPI"],
   },
   {
     title: "Database",
-    icon: <Database className="h-6 w-6 text-blue-400" />,
+    icon: <Database className="h-6 w-6 text-primary" />,
     skills: ["MySQL", "PostgreSQL", "MongoDB", "SQLite"],
   },
   {
     title: "Development Tools",
-    icon: <GitBranch className="h-6 w-6 text-blue-400" />,
+    icon: <GitBranch className="h-6 w-6 text-primary" />,
     skills: ["Git", "GitHub", "GitLab", "VS Code", "Docker", "CI/CD", "AWS"],
   },
   {
     title: "Programming Languages",
-    icon: <Code className="h-6 w-6 text-blue-400" />,
+    icon: <Code className="h-6 w-6 text-primary" />,
     skills: ["JavaScript", "TypeScript", "Python", "Java", "C++", "C"],
   },
   {
     title: "AI & ML",
-    icon: <Cpu className="h-6 w-6 text-blue-400" />,
+    icon: <Cpu className="h-6 w-6 text-primary" />,
     skills: ["Generative AI", "Data Analysis", "AI Integration"],
   },
 ];
-// Replace the SkillCard component with this simplified version
+
 const SkillCard = ({
   category,
   index,
@@ -67,7 +66,7 @@ const SkillCard = ({
   return (
     <div
       className={cn(
-        "glass-effect rounded-xl p-6 card-hover",
+        "glass-effect rounded-sm p-6 card-hover border border-primary/10 hover:border-primary/30 transition-all duration-300",
         "opacity-0 translate-y-8",
         inView && "animate-fade-up opacity-100 translate-y-0"
       )}
@@ -77,19 +76,19 @@ const SkillCard = ({
       }}
     >
       <div className="flex items-center mb-6">
-        <div className="p-2 bg-blue-900/50 rounded-lg mr-3 shadow-inner">
+        <div className="p-2 bg-primary/10 rounded-sm mr-3 border border-primary/20">
           {category.icon}
         </div>
-        <h3 className="text-xl font-semibold text-blue-300">
+        <h3 className="text-xl font-semibold text-primary font-retro tracking-wide">
           {category.title}
         </h3>
       </div>
 
       <div className="grid grid-cols-2 gap-3">
         {category.skills.map((skill: string) => (
-          <div key={skill} className="flex items-center">
-            <div className="w-2 h-2 rounded-full bg-blue-500 mr-2"></div>
-            <span className="text-foreground/90 font-medium">{skill}</span>
+          <div key={skill} className="flex items-center group">
+            <div className="w-2 h-2 bg-primary mr-2 group-hover:shadow-[0_0_8px_rgba(0,191,255,0.8)] transition-all duration-300"></div>
+            <span className="text-foreground/90 font-medium text-sm">{skill}</span>
           </div>
         ))}
       </div>
@@ -105,14 +104,15 @@ const Skills = () => {
 
   return (
     <section id="skills" className="py-24 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-blue-950/10 to-background opacity-50"></div>
+      {/* Subtle gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent"></div>
 
       <div className="container-section relative z-10" ref={ref}>
         <div className="flex justify-center mb-8">
           <div className="relative">
-            <div className="absolute inset-0 rounded-full bg-blue-500/20 animate-pulse-slow"></div>
-            <div className="relative bg-secondary p-3 rounded-full">
-              <Lightbulb className="h-6 w-6 text-blue-400" />
+            <div className="absolute inset-0 rounded-sm bg-primary/20 animate-neon-pulse"></div>
+            <div className="relative bg-secondary p-3 rounded-sm border border-primary/30">
+              <Lightbulb className="h-6 w-6 text-primary" />
             </div>
           </div>
         </div>
@@ -133,9 +133,9 @@ const Skills = () => {
         </div>
       </div>
 
-      {/* Decorative elements */}
-      <div className="absolute top-1/4 right-[5%] w-16 h-16 border border-blue-500/20 rounded-full animate-spin-slow"></div>
-      <div className="absolute bottom-1/4 left-[10%] w-12 h-12 border border-blue-500/20 rounded-full animate-spin-slow"></div>
+      {/* Retro decorative elements */}
+      <div className="absolute top-1/4 right-[5%] w-16 h-16 border border-primary/20 rotate-45 animate-spin-slow"></div>
+      <div className="absolute bottom-1/4 left-[10%] w-12 h-12 border border-primary/20 rotate-12 animate-spin-slow"></div>
     </section>
   );
 };

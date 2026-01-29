@@ -25,40 +25,13 @@ const projects = [
     image: "/Rate-a-school.png",
   },
   {
-    title: "Vendor Search App",
-    description: "Vendor Search App",
-    details:
-      "A voluntarily built web app for Zeta-Web Nigeria Limited built during my internship period, it extracts vendor data from excel files and presents them on the front-end in a beautiful way for easier data accessibility and efficiency. Earned me a recommendation from the head of technology.",
-    link: "https://vendor-search.vercel.app/",
-    stack: ["TYPESCRIPT", "NEXT.JS", "TAILWIND"],
-    image: "/vendor.png",
-  },
-  {
     title: "NeuraLearn",
     description: "AI-Powered Learning Assistant",
     details:
       "Developed a web app that transforms uploaded text, PDFs, and images into interactive learning materials, including auto-generated questions and flashcards. The platform offers customizable difficulty levels, study modes, and real-time performance tracking with accuracy, time analytics and other metrics.",
-    link: "https://neura-learn-frontend-fmin.vercel.app/",
+    link: "https://neuralearnai.com",
     stack: ["EXPRESS.JS", "REACT.JS", "DJANGO", "PYTHON", "JAVASCRIPT"],
     image: "/neuralearn.png",
-  },
-  {
-    title: "Littlemon API",
-    description: "API for LittleLemon Restaurant",
-    details:
-      "Developed an API for the LittleLemon Restaurant for reservation management and other functions, implementing token-based authentication, throttling, and pagination to ensure secure and efficient API usage. The API supports multiple response formats, including JSON and XML.",
-    link: "https://github.com/semilogopaul/littlelemon",
-    stack: [
-      "PYTHON",
-      "DJANGO",
-      "DJANGO-REST FRAMEWORK",
-      "SQL",
-      "HTML",
-      "CSS",
-      "JAVASCRIPT",
-      "DJOSER",
-    ],
-    image: "/littlelemon.PNG",
   },
   {
     title: "DIY Analytics",
@@ -124,7 +97,7 @@ const ProjectCard = ({
     setShowFullStack(true);
     setTimeout(() => {
       setShowFullStack(false);
-    }, 7000); // Hide after 7 seconds
+    }, 7000);
   };
 
   return (
@@ -134,7 +107,7 @@ const ProjectCard = ({
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={{ y: -10 }}
-      className="glass-effect rounded-xl overflow-hidden group"
+      className="glass-effect rounded-sm overflow-hidden group border border-primary/10 hover:border-primary/30 transition-all duration-300"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -146,15 +119,14 @@ const ProjectCard = ({
           height={400}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-black/30"></div>{" "}
-        {/* Subtle dark overlay */}
+        <div className="absolute inset-0 bg-black/40"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <Button
             asChild
             variant="outline"
             size="sm"
-            className="rounded-full bg-blue-900/50 backdrop-blur-sm border-blue-400/50 hover:bg-blue-800/70"
+            className="rounded-sm bg-background/80 backdrop-blur-sm border-primary/50 hover:bg-primary/20 hover:border-primary transition-all duration-300"
           >
             <a
               href={project.link}
@@ -174,7 +146,7 @@ const ProjectCard = ({
       </div>
 
       <div className="p-6">
-        <h3 className="text-xl font-bold mb-2 text-blue-400 group-hover:text-blue-300 transition-colors duration-300">
+        <h3 className="text-xl font-bold mb-2 text-primary group-hover:text-glow transition-all duration-300">
           {project.title}
         </h3>
         <p className="text-foreground/70 text-sm mb-4">{project.description}</p>
@@ -185,7 +157,7 @@ const ProjectCard = ({
               <Badge
                 key={tech}
                 variant="secondary"
-                className="text-xs bg-blue-900/50 text-blue-200 hover:bg-blue-800"
+                className="text-xs bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 font-retro tracking-wide rounded-sm"
               >
                 {tech}
               </Badge>
@@ -194,7 +166,7 @@ const ProjectCard = ({
           {!showFullStack && project.stack.length > 3 && (
             <Badge
               variant="outline"
-              className="text-xs border-blue-500/30 text-blue-300 cursor-pointer"
+              className="text-xs border-primary/30 text-primary/80 cursor-pointer hover:border-primary hover:text-primary rounded-sm"
               onClick={handleShowFullStack}
             >
               +{project.stack.length - 3} more
@@ -230,14 +202,15 @@ const Projects = () => {
 
   return (
     <section id="projects" className="py-24 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-blue-950/10 to-background opacity-50"></div>
+      {/* Subtle gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent"></div>
 
       <div className="container-section relative z-10" ref={ref}>
         <div className="flex justify-center mb-8">
           <div className="relative">
-            <div className="absolute inset-0 rounded-full bg-blue-500/20 animate-pulse-slow"></div>
-            <div className="relative bg-secondary p-3 rounded-full">
-              <Layers className="h-6 w-6 text-blue-400" />
+            <div className="absolute inset-0 rounded-sm bg-primary/20 animate-neon-pulse"></div>
+            <div className="relative bg-secondary p-3 rounded-sm border border-primary/30">
+              <Layers className="h-6 w-6 text-primary" />
             </div>
           </div>
         </div>
@@ -258,9 +231,9 @@ const Projects = () => {
         </div>
       </div>
 
-      {/* Decorative elements */}
-      <div className="absolute top-1/3 left-[5%] w-16 h-16 border border-blue-500/20 rounded-full animate-spin-slow"></div>
-      <div className="absolute bottom-1/3 right-[8%] w-12 h-12 border border-blue-500/20 rounded-full animate-spin-slow"></div>
+      {/* Retro decorative elements */}
+      <div className="absolute top-1/3 left-[5%] w-16 h-16 border border-primary/20 rotate-45 animate-spin-slow"></div>
+      <div className="absolute bottom-1/3 right-[8%] w-12 h-12 border border-primary/20 rotate-12 animate-spin-slow"></div>
     </section>
   );
 };

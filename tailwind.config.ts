@@ -51,6 +51,12 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Retro neon colors
+        neon: {
+          DEFAULT: "#00BFFF",
+          blue: "#00BFFF",
+          glow: "#00D4FF",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -61,6 +67,7 @@ const config: Config = {
         inter: ["var(--font-inter)"],
         poppins: ["var(--font-poppins)"],
         space: ["var(--font-space)"],
+        retro: ["var(--font-retro)"],
       },
       keyframes: {
         "accordion-down": {
@@ -115,6 +122,33 @@ const config: Config = {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0.6" },
         },
+        // Retro flicker effect
+        flicker: {
+          "0%, 100%": { opacity: "1" },
+          "41%": { opacity: "1" },
+          "42%": { opacity: "0.95" },
+          "43%": { opacity: "1" },
+          "45%": { opacity: "0.97" },
+          "46%": { opacity: "1" },
+        },
+        // Neon pulse effect
+        "neon-pulse": {
+          "0%, 100%": {
+            boxShadow: "0 0 5px rgba(0, 191, 255, 0.5), 0 0 10px rgba(0, 191, 255, 0.3)",
+          },
+          "50%": {
+            boxShadow: "0 0 15px rgba(0, 191, 255, 0.7), 0 0 30px rgba(0, 191, 255, 0.5), 0 0 45px rgba(0, 191, 255, 0.3)",
+          },
+        },
+        // Text flicker for retro CRT effect
+        "text-flicker": {
+          "0%, 100%": { 
+            textShadow: "0 0 10px rgba(0, 191, 255, 0.7), 0 0 20px rgba(0, 191, 255, 0.5)" 
+          },
+          "50%": { 
+            textShadow: "0 0 5px rgba(0, 191, 255, 0.5), 0 0 15px rgba(0, 191, 255, 0.3)" 
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -130,6 +164,10 @@ const config: Config = {
         float: "float 6s ease-in-out infinite",
         ripple: "ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite",
         glow: "glow 2s ease-in-out infinite",
+        // Retro animations
+        flicker: "flicker 4s infinite",
+        "neon-pulse": "neon-pulse 2s ease-in-out infinite",
+        "text-flicker": "text-flicker 3s ease-in-out infinite",
       },
     },
   },

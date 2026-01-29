@@ -23,9 +23,9 @@ const Particles = () => {
     const particleCount = window.innerWidth < 768 ? 15 : 30
     const particles: Particle[] = []
 
-    // Create particles
+    // Create particles with retro pixel-like styling
     for (let i = 0; i < particleCount; i++) {
-      const size = Math.random() * 5 + 2
+      const size = Math.random() * 4 + 2
       const x = Math.random() * window.innerWidth
       const y = Math.random() * window.innerHeight
       const speedX = Math.random() * 0.2 - 0.1
@@ -37,9 +37,11 @@ const Particles = () => {
       element.style.height = `${size}px`
       element.style.left = `${x}px`
       element.style.top = `${y}px`
-      element.style.opacity = (Math.random() * 0.5 + 0.3).toString()
+      element.style.opacity = (Math.random() * 0.4 + 0.2).toString()
       element.style.animation = `float-up ${Math.random() * 20 + 10}s linear infinite`
       element.style.animationDelay = `${Math.random() * 5}s`
+      // Make particles more square/pixel-like for retro feel
+      element.style.borderRadius = "2px"
 
       container.appendChild(element)
 

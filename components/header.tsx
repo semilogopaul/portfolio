@@ -52,7 +52,7 @@ const Header = () => {
       className={cn(
         "fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out",
         scrolled
-          ? "bg-background/80 backdrop-blur-md shadow-lg"
+          ? "bg-background/95 backdrop-blur-sm border-b border-primary/10"
           : "bg-transparent"
       )}
     >
@@ -60,19 +60,19 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           <div className="flex-shrink-0">
             <Link href="#home" className="group">
-              <h2 className="text-2xl font-bold font-poppins">
+              <h2 className="text-2xl font-bold font-space">
                 <span className="text-white group-hover:text-glow transition-all duration-300">
                   {isSmallScreen ? (
                     <>
-                      <span className="text-blue-500">O</span>
+                      <span className="text-primary">O</span>
                       <span className="text-white">LUWASEMILOGO</span>
                     </>
                   ) : (
-                    <span className="text-blue-500">A</span>
+                    <span className="text-primary">A</span>
                   )}
                 </span>
                 {isSmallScreen ? "" : "DEOGUN"}{" "}
-                <span className="text-blue-500 group-hover:text-glow transition-all duration-300">
+                <span className="text-primary group-hover:text-glow transition-all duration-300">
                   {isSmallScreen ? "" : "O"}
                 </span>
                 {isSmallScreen ? "" : "LUWASEMILOGO"}
@@ -87,8 +87,8 @@ const Header = () => {
                 key={link.name}
                 href={link.href}
                 className={cn(
-                  "relative py-2 text-foreground/80 hover:text-primary transition-colors duration-200 font-medium",
-                  activeSection === link.href.substring(1) && "text-primary"
+                  "relative py-2 text-foreground/80 hover:text-primary transition-colors duration-200 font-medium font-retro text-lg tracking-wide",
+                  activeSection === link.href.substring(1) && "text-primary text-glow"
                 )}
               >
                 {link.name}
@@ -96,7 +96,7 @@ const Header = () => {
                   className={cn(
                     "absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300",
                     activeSection === link.href.substring(1)
-                      ? "w-full"
+                      ? "w-full shadow-[0_0_10px_rgba(0,191,255,0.7)]"
                       : "group-hover:w-full"
                   )}
                 />
@@ -111,6 +111,7 @@ const Header = () => {
               size="icon"
               onClick={toggleMenu}
               aria-label="Toggle menu"
+              className="text-primary hover:bg-primary/10"
             >
               {isOpen ? (
                 <X className="h-6 w-6" />
@@ -125,7 +126,7 @@ const Header = () => {
       {/* Mobile Navigation */}
       <div
         className={cn(
-          "md:hidden fixed inset-0 bg-background/95 backdrop-blur-md z-40 transition-transform duration-300 ease-in-out overflow-hidden",
+          "md:hidden fixed inset-0 bg-background/98 backdrop-blur-sm z-40 transition-transform duration-300 ease-in-out overflow-hidden",
           isOpen ? "translate-x-0" : "translate-x-full"
         )}
         style={{ position: "fixed", height: "100vh" }}
@@ -138,6 +139,7 @@ const Header = () => {
               size="icon"
               onClick={() => setIsOpen(false)}
               aria-label="Close menu"
+              className="text-primary hover:bg-primary/10"
             >
               <X className="h-6 w-6" />
             </Button>
@@ -148,8 +150,8 @@ const Header = () => {
               key={link.name}
               href={link.href}
               className={cn(
-                "text-2xl font-medium text-foreground hover:text-primary transition-colors duration-200",
-                activeSection === link.href.substring(1) && "text-primary"
+                "text-2xl font-medium text-foreground hover:text-primary transition-colors duration-200 font-retro tracking-wider",
+                activeSection === link.href.substring(1) && "text-primary text-glow"
               )}
               onClick={(e) => {
                 e.preventDefault();

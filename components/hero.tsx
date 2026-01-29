@@ -29,12 +29,12 @@ const Hero = () => {
     >
       <Particles />
 
+      {/* Retro grid background with subtle glow */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -inset-[10px] opacity-30">
-          {/* Animated background elements */}
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse-slow"></div>
-          <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-indigo-500/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse-slow animation-delay-2000"></div>
-          <div className="absolute bottom-1/4 right-1/3 w-72 h-72 bg-blue-700/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse-slow animation-delay-4000"></div>
+        <div className="absolute inset-0 opacity-20">
+          {/* Corner glow accents */}
+          <div className="absolute top-0 left-0 w-96 h-96 bg-primary/10 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/10 rounded-full filter blur-3xl"></div>
         </div>
       </div>
 
@@ -42,8 +42,8 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-4 flex justify-center">
             <div className="relative">
-              <div className="absolute inset-0 rounded-full bg-blue-500/20 animate-pulse-slow"></div>
-              <div className="relative bg-secondary p-3 rounded-full">
+              <div className="absolute inset-0 rounded-sm bg-primary/20 animate-neon-pulse"></div>
+              <div className="relative bg-secondary p-3 rounded-sm border border-primary/30">
                 <Code className="h-6 w-6 text-primary" />
               </div>
             </div>
@@ -51,7 +51,7 @@ const Hero = () => {
 
           <h1
             ref={titleRef}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 animate-flicker"
           >
             <span className="block opacity-0 translate-y-8 transition-all duration-500 ease-out">
               Hello👋,
@@ -59,26 +59,26 @@ const Hero = () => {
             <span className="block opacity-0 translate-y-8 transition-all duration-500 ease-out delay-300">
               My Name is
             </span>
-            <span className="block gradient-text opacity-0 translate-y-8 transition-all duration-500 ease-out delay-600 text-glow">
+            <span className="block gradient-text opacity-0 translate-y-8 transition-all duration-500 ease-out delay-600 text-glow animate-text-flicker">
               Semilogo
             </span>
           </h1>
 
           <p
-            className="text-xl md:text-2xl text-foreground/80 mb-12 animate-fade-up opacity-0"
+            className="text-xl md:text-2xl text-foreground/80 mb-12 animate-fade-up opacity-0 font-retro tracking-wider"
             style={{ animationDelay: "1s", animationFillMode: "forwards" }}
           >
             Software Engineer & Full-Stack Developer
           </p>
 
           <div
-            className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-up opacity-0"
+            className="flex flex-col sm:flex-row justify-center items-center gap-4 animate-fade-up opacity-0"
             style={{ animationDelay: "1.3s", animationFillMode: "forwards" }}
           >
             <Button
               asChild
               size="lg"
-              className="rounded-full px-8 bg-blue-600 hover:bg-blue-700 btn-glow group"
+              className="rounded-sm px-8 bg-primary hover:bg-primary/90 text-black font-semibold btn-glow group transition-all duration-300 hover:scale-105 w-1/2 sm:w-auto"
             >
               <a href="#projects" className="flex items-center">
                 <Sparkles className="mr-2 h-4 w-4 transition-transform group-hover:rotate-12" />
@@ -89,7 +89,7 @@ const Hero = () => {
               asChild
               variant="outline"
               size="lg"
-              className="rounded-full px-8 border-blue-500/30 hover:bg-blue-500/10"
+              className="rounded-sm px-8 border-primary/50 hover:bg-primary hover:text-black transition-all duration-300 hover:scale-105 w-1/2 sm:w-auto"
             >
               <a href="#contact">Contact Me</a>
             </Button>
@@ -99,15 +99,15 @@ const Hero = () => {
 
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce-slow">
         <a href="#about" aria-label="Scroll down">
-          <ArrowDown className="h-8 w-8 text-primary" />
+          <ArrowDown className="h-8 w-8 text-primary animate-neon-pulse" />
         </a>
       </div>
 
-      {/* Decorative elements */}
-      <div className="absolute top-1/4 right-[5%] w-24 h-24 border border-blue-500/20 rounded-full animate-spin-slow"></div>
-      <div className="absolute bottom-1/4 left-[10%] w-16 h-16 border border-blue-500/20 rounded-full animate-spin-slow"></div>
-      <div className="absolute top-1/3 left-[15%] w-4 h-4 bg-blue-500/30 rounded-full animate-pulse-slow"></div>
-      <div className="absolute bottom-1/3 right-[15%] w-6 h-6 bg-blue-500/20 rounded-full animate-pulse-slow"></div>
+      {/* Retro decorative elements - angular shapes */}
+      <div className="absolute top-1/4 right-[5%] w-24 h-24 border border-primary/20 rotate-45 animate-spin-slow"></div>
+      <div className="absolute bottom-1/4 left-[10%] w-16 h-16 border border-primary/20 rotate-12 animate-spin-slow"></div>
+      <div className="absolute top-1/3 left-[15%] w-4 h-4 bg-primary/30 animate-pulse-slow"></div>
+      <div className="absolute bottom-1/3 right-[15%] w-6 h-6 bg-primary/20 animate-pulse-slow"></div>
     </section>
   );
 };

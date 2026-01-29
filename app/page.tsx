@@ -9,7 +9,7 @@ import { Toaster } from "@/components/ui/toaster"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-background to-background/90 text-foreground overflow-hidden">
+    <main className="min-h-screen bg-background text-foreground overflow-hidden relative scanlines retro-grid">
       <Header />
       <Hero />
       <About />

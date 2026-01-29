@@ -1,19 +1,19 @@
 import type React from "react";
 import type { Metadata } from "next";
-import { Inter, Poppins, Space_Grotesk } from "next/font/google";
+import { Inter, Space_Grotesk, VT323 } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-poppins",
-});
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-space",
+});
+const vt323 = VT323({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-retro",
 });
 
 export const metadata: Metadata = {
@@ -41,7 +41,7 @@ export default function RootLayout({
         <meta name="msvalidate.01" content="49CB0F9D0D5749ABFC3CD0F3E547D760" />
       </head>
       <body
-        className={`${inter.variable} ${poppins.variable} ${spaceGrotesk.variable}`}
+        className={`${inter.variable} ${spaceGrotesk.variable} ${vt323.variable}`}
       >
         <ThemeProvider
           attribute="class"

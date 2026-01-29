@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
 import { cn } from "@/lib/utils";
-import { Instagram, Linkedin, Github, Clock, ArrowUp } from "lucide-react";
+import { Instagram, Linkedin, Github, ArrowUp } from "lucide-react";
 
 const socialLinks = [
   {
@@ -30,8 +30,9 @@ const Footer = () => {
   });
 
   return (
-    <footer className="py-12 relative">
-      <div className="absolute inset-0 bg-gradient-to-t from-blue-950/20 to-transparent opacity-50"></div>
+    <footer className="py-12 relative border-t border-primary/10">
+      {/* Subtle gradient */}
+      <div className="absolute inset-0 bg-gradient-to-t from-primary/[0.03] to-transparent"></div>
 
       <div className="container-section relative z-10" ref={ref}>
         <div
@@ -41,19 +42,21 @@ const Footer = () => {
           )}
         >
           <Link href="#home" className="inline-block mb-4 group">
-            <h2 className="text-2xl font-bold font-poppins">
-              <span className="text-blue-500 group-hover:text-glow transition-all duration-300">
+            <h2 className="text-2xl font-bold font-space">
+              <span className="text-primary group-hover:text-glow transition-all duration-300">
                 A
               </span>
               DEOGUN{" "}
-              <span className="text-blue-500 group-hover:text-glow transition-all duration-300">
+              <span className="text-primary group-hover:text-glow transition-all duration-300">
                 O
               </span>
               LUWASEMILOGO
             </h2>
           </Link>
 
-          <p className="text-foreground/70 mb-6">Software Engineer</p>
+          <p className="text-foreground/70 mb-6 font-retro tracking-wider text-lg">
+            Software Engineer
+          </p>
 
           <div className="flex justify-center space-x-4 mb-8">
             {socialLinks.map((link) => (
@@ -62,7 +65,7 @@ const Footer = () => {
                 href={link.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 glass-effect rounded-full hover:bg-blue-900/50 hover:text-blue-400 transition-colors duration-300"
+                className="p-3 glass-effect rounded-sm border border-primary/10 hover:border-primary/50 hover:bg-primary/10 hover:text-primary transition-all duration-300 hover:shadow-[0_0_15px_rgba(0,191,255,0.3)]"
                 aria-label={link.platform}
               >
                 {link.icon}
@@ -70,7 +73,7 @@ const Footer = () => {
             ))}
           </div>
 
-          <p className="text-foreground/50 text-sm">
+          <p className="text-foreground/50 text-sm font-retro tracking-wide">
             Copyright © {new Date().getFullYear()} Oluwasemilogo. All rights
             reserved
           </p>
@@ -79,7 +82,7 @@ const Footer = () => {
 
       <a
         href="#home"
-        className="absolute right-6 bottom-6 p-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg transition-all duration-300 hover:transform hover:-translate-y-1 btn-glow"
+        className="absolute right-6 bottom-6 p-3 bg-primary hover:bg-primary/90 text-black rounded-sm transition-all duration-300 hover:transform hover:-translate-y-1 btn-glow"
         aria-label="Back to top"
       >
         <ArrowUp className="h-5 w-5" />
